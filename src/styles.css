@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*************** HEADER ***************/
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 1240px;
+    height: 65px;
+}
+
+.header {
+    background-color: #F44336;
+    width: 100%;
+    height: auto;
+}
+
+.header__logo {
+    color: #FFFFFF;
+}
+
+.header__navbar .header__ul-navbar {
+    display: flex;
+}
+
+.header__navbar .header__li-navbar {
+    margin-left: 20px;
+    list-style: none;
+}
+
+.header__li-navbar a {
+    text-decoration: none;
+    color: #FFFFFF;
+
+    position: relative;
+    display: block;
+    transition: all .5s;
+}
+
+.header__li-navbar a::after, .header__li-navbar a::before {
+    transition: all .5s;
+}
+
+.header__li-navbar a:hover {
+    color: #FFFFFF;
+}
+
+.header__li-navbar a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #FFFFFF;
+    height: 2px;
+}
+
+.header__li-navbar a:hover::after {
+    width: 100%;
+}

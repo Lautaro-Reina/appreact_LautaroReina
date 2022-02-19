@@ -1,17 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* VARIABLE REACT EN SCOPE, ESTA PRIMER LINE SE PUEDE NO ESCRIBIR TAMBIEN */
+import React from "react"  
+/* VARIABLE REACTDOM EN SCOPE */
+import ReactDOM from "react-dom"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import App from './components/App'
+import './styles.css'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+/* PARA PONER EL COMPONENTE EN EL DOM. TOMA DOS PARAMETROS:
+EL COMPONENTE Y EL LUGAR DEL DOM DONDE SE QUIERE MOSTRAR EL COMPONENTE
+*/
+ReactDOM.render(<App/>, document.getElementById('root'))
