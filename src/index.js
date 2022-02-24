@@ -3,7 +3,7 @@ import React from "react"
 /* VARIABLE REACTDOM EN SCOPE */
 import ReactDOM from "react-dom"
 
-import App from './components/App'
+import App from './App'
 import './styles.css'
 
 

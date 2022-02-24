@@ -11,7 +11,7 @@ body {
 /*************** HEADER ***************/
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: auto;
     max-width: 1240px;
@@ -69,4 +69,10 @@ body {
 
 .header__li-navbar a:hover::after {
     width: 100%;
+}
+
+.cart__icon {
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
 }
