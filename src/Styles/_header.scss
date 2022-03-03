@@ -1,0 +1,70 @@
+@import "variables.scss";
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    max-width: 1240px;
+    height: 65px;
+}
+
+.header {
+    background-color: $primary-color;
+    width: 100%;
+    height: auto;
+
+    &__logo {
+        color: $background-icons;
+    }
+
+    &__navbar &__ul-navbar {
+        display: flex;
+    }
+
+    &__navbar &__li-navbar {
+        margin-left: 20px;
+        list-style: none;
+    }
+
+    &__li-navbar a {
+        text-decoration: none;
+        color: $background-icons;
+    
+        position: relative;
+        display: block;
+        transition: all .5s;
+    }
+
+    &__li-navbar a::after, &__li-navbar a::before {
+        transition: all .5s;
+    }
+    
+    &__li-navbar a:hover {
+        color: $background-icons;
+    }
+    
+    &__li-navbar a::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: $background-icons;
+        height: 2px;
+    }
+    
+    &__li-navbar a:hover::after {
+        width: 100%;
+    }
+    
+    .cart__icon {
+        font-size: 20px;
+        color: $background-icons;
+        cursor: pointer;
+    }
+
+}

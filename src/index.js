@@ -4,7 +4,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 
 import App from './App'
-import './styles.css'
+import './Styles/App.scss'
 
 
 /* PARA PONER EL COMPONENTE EN EL DOM. TOMA DOS PARAMETROS:
