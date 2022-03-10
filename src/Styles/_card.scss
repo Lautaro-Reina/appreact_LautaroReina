@@ -1,0 +1,31 @@
+@import "variables.scss";
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-gap: 2rem 2rem;
+    align-items: end;
+    width: 100%;
+}
+
+.card {
+    width: 240px;
+    height: 300px;
+    background: rgb(255, 255, 255);
+    border-radius: 0.4em;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: rgb(250, 250, 250) 0.2em solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+        border: $primary-color 0.2em solid;
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+    }
+}
