@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './Item'
 
-const itemList = (props) => {
+const ItemList = (props) => {
     return (
         <section className='container products'>
             {props.items.map ((item) => {
@@ -13,4 +13,4 @@ const itemList = (props) => {
     )
 }
 
-export default itemList;
+export default ItemList;
