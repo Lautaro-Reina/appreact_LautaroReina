@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Item = (props) => {
     return (
@@ -11,7 +12,7 @@ const Item = (props) => {
             </div>
             <div class="card__price">
                 <span>{props.item.price}</span>
-                <button>Ver más</button>
+                <Link to={`/item/${props.item.id}`}><button>Ver más</button></Link>
             </div>
         </div>
     )

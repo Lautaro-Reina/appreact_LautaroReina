@@ -1,16 +1,18 @@
 import React, {useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
-    const [items, setItems] = useState({});
+    const [item, setItem] = useState({});
+    const {idProducto} = useParams()
 
     useEffect (() => {
-        fetch('https://fakestoreapi.com/products?limit=10')
+        fetch(`https://fakestoreapi.com/products/${idProducto}`)
             .then((response) => {
                 return response.json();
             })
             .then((resultado) => {
-                setItems(resultado);
+                setItem(resultado);
             })
             .catch(() => {
                 console.log('Error al cargar los productos');
@@ -18,7 +20,7 @@ const ItemDetailContainer = () => {
     }, []);
 
     return (
-        <ItemDetail item={items}/>
+        <ItemDetail item={item}/>
 
     )
 }
