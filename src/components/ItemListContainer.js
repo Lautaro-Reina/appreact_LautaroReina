@@ -6,7 +6,8 @@ const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(true)
     const [items, setItems] = useState([]);
-    const listParams = useParams();
+
+    const {id} = useParams();
 
     useEffect (() => {
         fetch('https://fakestoreapi.com/products?limit=10')
@@ -15,8 +16,7 @@ const ItemListContainer = () => {
             })
              /* console.log(listParams) */
             .then((resultado) => {
-                setItems(resultado);
-                console.log(listParams)
+                setItems(resultado)
             })
             .catch(() => {
                 console.log('Error al cargar los productos');
@@ -24,7 +24,7 @@ const ItemListContainer = () => {
             .finally(() => {
                 setLoading(false);
             })
-    }, [listParams]);
+    }, [id]);
 
     return (
         loading

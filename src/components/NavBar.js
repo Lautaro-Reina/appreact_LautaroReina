@@ -10,8 +10,9 @@ const NavBar = () => {
           <nav className='header__navbar'>
               <ul className='header__ul-navbar'>
                   <li className='header__li-navbar'><Link to="/">Inicio</Link></li>
-                  <li className='header__li-navbar'><Link to="/category/productos">Productos</Link></li>
-                  <li className='header__li-navbar'><Link to="/category/contacto">Contacto</Link></li>
+                  <li className='header__li-navbar'><Link id="men's clothing"  to="/category/men'sclothing">Men's</Link></li>
+                  <li className='header__li-navbar'><Link id="jewelery" to="/category/jewelery">Jewelery</Link></li>
+                  <li className='header__li-navbar'><Link id="electronics" to="/category/electronics">Electronics</Link></li>
               </ul>
           </nav>
           <CartWidget/>

@@ -11,6 +11,7 @@ const Item = (props) => {
                 <p>{props.item.title}</p>
             </div>
             <div class="card__price">
+                <span>{props.item.category}</span>
                 <span>{props.item.price}</span>
                 <Link to={`/item/${props.item.id}`}><button>Ver más</button></Link>
             </div>
