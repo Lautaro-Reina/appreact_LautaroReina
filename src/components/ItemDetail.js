@@ -25,7 +25,7 @@ const ItemDetail = (props) => {
                 <p>AR$ {props.item.price}</p>
             </div>
             <p className="descripcion">{props.item.description}</p>
-            {quantity === 0 ? (<ItemCount stock={5} initial={1} onAdd={onAdd}/>) : (<Link to="/Cart">Ir al carrito</Link>)}
+            {quantity === 0 ? (<ItemCount stock={5} initial={1} onAdd={onAdd}/>) : (<Link to="/Cart">Terminar mi compra</Link>)}
         </article>
     )
 }

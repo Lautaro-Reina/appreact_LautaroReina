@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { contextCart } from './CartContext';
 
 const CartWidget = () => {
@@ -8,8 +9,8 @@ const CartWidget = () => {
 
     return (
         <div className='cart'>
-            <i class="fi fi-rs-shopping-cart cart__icon"></i>
-            {cantidad}
+            <Link to="/cart"><i class="fi fi-rs-shopping-cart cart__icon"></i></Link>
+            {cantidad > 0 ? cantidad : ''}
         </div>
 
     )
