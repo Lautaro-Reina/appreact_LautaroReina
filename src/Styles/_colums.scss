@@ -1,0 +1,59 @@
+/* GRID SYSTEM */
+$cols: 12; //Cantidad de columnas del sistema
+$gap: 24px; //Especiado entre las columnas
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: $gap / 2; //Mitad de gap
+    padding-right: $gap / 2; //Mitad de gap
+
+    max-width: 1200px;
+}
+
+.gs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: $gap / -2;
+    margin-right: $gap / -2;
+}
+
+[class*="col-"], .col {
+    width: 100%;
+    max-width: 100%;
+    /* padding-left: $gap / 2;
+    padding-right: $gap / 2; */
+    padding: $gap / 2;
+}
+
+@mixin grid-system($mq) {
+    .#{$mq} {
+        flex: 1 0 0;
+     }
+     
+     @for $col from 1 through $cols {
+        .#{$mq}-#{$col} {
+            flex: 0 0 (100% / $cols) * $col;
+            max-width: (100% / $cols) * $col;
+        } 
+     }
+}
+
+@include grid-system(col);
+
+@media screen and (max-width: 576px) {
+    @include grid-system(sm-col);
+}
+
+@media screen and (max-width: 768px) {
+    @include grid-system(md-col);
+}
+
+@media screen and (max-width: 992px) {
+    @include grid-system(lg-col);
+}
+
+@media screen and (max-width: 1200px) {
+    @include grid-system(xl-col);
+}

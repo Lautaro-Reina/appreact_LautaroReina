@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const contextCart = createContext()
 const { Provider } = contextCart
+/* export const useCartContext = () => useContext(CartContext); */
 
 const CartContext = ({ children }) => {
 

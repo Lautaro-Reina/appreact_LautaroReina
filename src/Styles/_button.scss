@@ -1,0 +1,18 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.button {
+    display: inline-block;
+    background-color: $primary-color;
+    color: $background-icons;
+    padding: .7rem 2rem;
+    font-weight: .5rem;
+    border-radius: .5rem;
+    border: 2px solid $dark-primary-color;
+    transition: .3s;
+    cursor: pointer;
+    
+    &:hover {
+        transform: translateY(-.25rem);
+    }
+}

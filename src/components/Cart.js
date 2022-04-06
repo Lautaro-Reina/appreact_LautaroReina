@@ -2,10 +2,38 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { contextCart } from './CartContext';
+import { db } from './Firebase';
+import { collection, serverTimestamp, addDoc } from 'firebase/firestore';
 
 const Cart = () => {
 
     const {carrito, priceTotal, removeItem, clear} = useContext(contextCart); 
+
+    const crearOrden = () => {
+
+        const ordenesCollection = collection(db, "ordenes")
+    
+        const orden = {
+            buyer: {
+                nombre: "Lautaro",
+                email: "lautaro@gmail.com",
+                telefono: "1234567890"
+            },
+            items: carrito,
+            date: serverTimestamp(),
+            total: priceTotal()
+          }
+
+            const pedido = addDoc(ordenesCollection, orden)
+
+        pedido
+            .then((resultado) => {
+                return console.log(resultado)
+            })
+            .catch(() => {
+                return console.log('error')
+            })
+    }
 
     return carrito.length ? (
         <div>
@@ -21,6 +49,8 @@ const Cart = () => {
                 <p>Total: AR$ {priceTotal()}</p>
                 </>
             ))}
+            <button onClick={crearOrden}>Terminar compra</button>
+            
         </div>
     ) : (
        

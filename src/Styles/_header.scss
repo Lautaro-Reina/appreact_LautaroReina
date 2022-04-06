@@ -1,18 +1,56 @@
-@import "variables.scss";
+@import 'variables.scss';
+@import 'mixins.scss';
 
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: auto;
-    max-width: 1240px;
-    height: 65px;
+/* Active link */
+.nav__toggle {
+    display: none;
+}
+
+.nav__link.active {
+    position: relative;
+}
+
+.nav__link.active::before {
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 45%;
+    width: 4px;
+    height: 4px;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__toggle {
+        display: block;
+    }
+    .nav__menu {
+        position: fixed;
+        top: 4.5rem;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        padding: 2rem;
+        background-color: blue;
+        transition: .5s;
+    }
+}
+
+.show {
+    left: 0;
 }
 
 .header {
     background-color: $primary-color;
-    width: 100%;
-    height: auto;
+    height: 4.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    &__div {
+        @include flexible(flex, row, nowrap, space-between, center);
+    }
 
     &__logo {
         color: $background-icons;
@@ -24,11 +62,9 @@
 
     &__navbar &__li-navbar {
         margin-left: 20px;
-        list-style: none;
     }
 
     &__li-navbar a {
-        text-decoration: none;
         color: $background-icons;
     
         position: relative;
@@ -67,4 +103,8 @@
         cursor: pointer;
     }
 
+}
+
+.scroll-header{
+    box-shadow: 1px 2px 11px -2px rgb(0 0 0 / 84%);
 }

@@ -8,3 +8,18 @@ $accent-color: #607D8B;
 $primary-text: #212121;
 $secondary-text: #757575;
 $divider-color: #BDBDBD;
+
+$mb-1: .5rem;
+$mb-2: 1rem;
+$mb-3: 1.5rem;
+$mb-4: 2rem;
+$mb-5: 2.5rem;
+$mb-6: 3rem;
+
+$z-fixed: 100;
+
+$breakpoints: (
+    sm: 480px,
+    md: 1024px,
+    lg: 1200px
+);

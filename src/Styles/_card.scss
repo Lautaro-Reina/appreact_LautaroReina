@@ -1,16 +1,17 @@
 @import "variables.scss";
+@import 'colums.scss';
 
-.products {
+/* .products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     grid-gap: 2rem 2rem;
     align-items: end;
     width: 100%;
-}
+} */
 
 .card {
-    width: 240px;
-    height: 300px;
+    width: auto;
+    height: 400px;
     background: rgb(255, 255, 255);
     border-radius: 0.4em;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
