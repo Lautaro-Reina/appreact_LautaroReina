@@ -1,11 +1,11 @@
 import React from 'react'
 import Item from './Item'
 
-const ItemList = (props) => {
+const ItemList = ({items}) => {
     return (
-        <section className='container products'>
+        <section className='container products min-vh'>
             <div className='gs-grid'>
-                {props.items.map ((item) => {
+                {items.map ((item) => {
                     return (
                         <Item key={item.id} item={item}/>
                     )

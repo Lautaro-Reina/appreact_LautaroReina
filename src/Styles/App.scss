@@ -16,6 +16,32 @@ html, body {
     display: block;
 }
 
+.pa {
+    padding: .5rem 0;
+}
+
+.warning {
+    text-align: center;
+    color: $secondary-text;
+
+    &-error {
+        background-color: $light-primary-color;
+        padding: .5rem 0;
+        border-radius: 3px;
+    }
+
+    &-success {
+        background-color: #4CAF50;
+        color: white;
+        padding: .5rem .5rem;
+        border-radius: 3px;
+    }
+}
+
+main {
+    display: block;
+}
+
 h1, h2, h3, p, ul {
     margin: 0;
 }
@@ -35,11 +61,23 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+
+.icon {
+    color: $primary-text;
+}
 /*************** HEADER ***************/
 @import "header.scss";
-
-@import "body.scss";
 
 @import "card.scss";
 
 @import "button.scss";
+
+@import 'itemdetail.scss';
+
+@import 'cartlist.scss';
+
+@import 'checkout.scss';
+
+@import 'footer.scss';
+
+@import 'loading.scss';

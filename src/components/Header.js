@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className={classHeader}>
       <div className='header__div container'>
-        <Link to="/"><div className='header__logo'>Logo</div></Link>
+        <Link to="/"><div className='header__logo'><img src="https://i.imgur.com/BQ7jZqu.png" alt="Logo de Arroyito VapeShop" /></div></Link>
           <NavBar/>
           <CartWidget/>
       </div>

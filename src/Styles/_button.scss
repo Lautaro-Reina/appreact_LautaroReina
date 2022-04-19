@@ -2,13 +2,63 @@
 @import 'mixins.scss';
 
 .button {
+    flex: 1 1;
     display: inline-block;
     background-color: $primary-color;
+    color: $background-icons;
+    padding: .7rem 1rem;
+    text-align: center;
+    font-weight: .5rem;
+    border-radius: .5rem;
+    border: 2px solid $dark-primary-color;
+    transition: .3s;
+    cursor: pointer;
+    
+    &:hover {
+        transform: translateY(-.25rem);
+    }
+}
+
+.button-outline {
+    /* display: inline-block; */
+    background-color: transparent;
+    color: $dark-primary-color;
+    padding: .7rem 1rem;
+    font-weight: .5rem;
+    border-radius: .5rem;
+    border: 2px solid $dark-primary-color;
+    cursor: pointer;
+    transition: .3s;
+    
+    &:hover {
+        background-color: $primary-color;
+        color: $background-icons;
+        transform: translateY(-.2rem);
+    }
+}
+
+.btn-icon {
+    border-radius: 3px;
+    padding: .5rem .75rem;
+    border: none;
+    cursor: pointer;
+    color: $primary-text;
+    transition: .3s;
+
+    &:hover {
+        transform: translateY(-.25rem);
+    }
+}
+
+.button-finish {
+    flex: 1 1;
+    display: inline-block;
+    background-color: #4CAF50;
     color: $background-icons;
     padding: .7rem 2rem;
     font-weight: .5rem;
     border-radius: .5rem;
-    border: 2px solid $dark-primary-color;
+    border: 2px solid #388E3C;
     transition: .3s;
     cursor: pointer;
     

@@ -1,0 +1,26 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+
+/* FOOTER */
+.footer {
+    border-top: 1px solid $divider-color;
+}
+
+.footerflex {
+    @include flexible(flex, row, nowrap, space-between, center);
+    height: 10vh;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .footerflex {
+        @include flexible(flex, column, nowrap, space-between, center);
+        gap: 1rem;
+    }
+}

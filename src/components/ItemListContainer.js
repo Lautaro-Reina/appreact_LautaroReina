@@ -3,6 +3,8 @@ import {useParams} from 'react-router-dom';
 import { productosCollection } from './Firebase';
 import { query, where, getDocs } from "firebase/firestore";
 import ItemList from './ItemList';
+import Loading from './Loading';
+import { toast } from 'react-toastify';
 
 const ItemListContainer = () => {
 
@@ -10,8 +12,6 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([]);
 
     const {idCategory} = useParams();
-
-    console.log(idCategory)
 
     useEffect (() => {
 
@@ -25,7 +25,18 @@ const ItemListContainer = () => {
                     setItems(FirebaseDb);
                 })
                 .catch(() => {
-                    console.log('ERROR DE CARGA')
+                    console.log('ERROR DE CARGA');
+
+                    toast.error('Error de carga', {
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
                 })
                 .finally(() => {
                     setLoading(false)
@@ -43,6 +54,17 @@ const ItemListContainer = () => {
                 })
                 .catch(() => {
                     console.log('ERROR DE CARGA')
+
+                    toast.error('Error de carga', {
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
                 })
                 .finally(() => {
                     setLoading(false)
@@ -54,7 +76,7 @@ const ItemListContainer = () => {
     return (
         loading
         ?
-        <h1>Cargando...</h1>
+        <Loading/>
         :
         <main>
             <ItemList items={items}/>

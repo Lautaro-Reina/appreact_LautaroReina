@@ -18,16 +18,3 @@
     }
 }
 
-/* RESPONSIVE */
-@mixin desk-up($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
-            @content;
-        }
-    } @else {
-        @media screen and (max-width: $breakpoint) {
-            @content;
-        }
-    }
-}
-

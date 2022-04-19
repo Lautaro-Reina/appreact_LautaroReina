@@ -14,7 +14,7 @@ const NavBar = () => {
   return (
     <nav className='header__navbar'>
       <div className="nav__toggle" onClick={toggleMenu}>
-                <i className='bx bx-menu'></i>
+                <i className='bx bx-menu bx-sm cart__icon'></i>
       </div>
       <div className={classMenu}>
       <ul className='header__ul-navbar'>

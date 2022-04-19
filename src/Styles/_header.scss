@@ -27,13 +27,18 @@
     }
     .nav__menu {
         position: fixed;
-        top: 4.5rem;
+        top: 6.2rem;
         left: -100%;
         width: 70%;
         height: 100vh;
         padding: 2rem;
-        background-color: blue;
+        background-color: $primary-color;
         transition: .5s;
+    }
+    .header__navbar .header__ul-navbar {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 }
 
@@ -43,7 +48,7 @@
 
 .header {
     background-color: $primary-color;
-    height: 4.5rem;
+    height: auto;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -53,7 +58,8 @@
     }
 
     &__logo {
-        color: $background-icons;
+        width: 100px;
+        height: 100px;
     }
 
     &__navbar &__ul-navbar {

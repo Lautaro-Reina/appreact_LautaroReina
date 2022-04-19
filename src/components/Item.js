@@ -1,20 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const Item = (props) => {
+const Item = ({item}) => {
     return (
-        <div className='col-3 md-col-6'>
+        <div className='col-6 md-col-3'>
             <div className="card">
                 <div className="card__img">
-                    <img src={props.item.image}/>
+                    <img src={item.image} alt=''/>
                 </div>
                 <div className="card__info">
-                    <p>{props.item.title}</p>
+                    <p>{item.title}</p>
                 </div>
                 <div className="card__price">
-                    <span>{props.item.category}</span>
-                    <span>AR$ {props.item.price}</span>
-                    <Link to={`/item/${props.item.id}`}><button className='button'>Ver más</button></Link>
+                    <span>{item.category}</span>
+                    <span>AR$ {item.price}</span>
+                    <Link to={`/item/${item.id}`}><button className='button'>Ver más</button></Link>
                 </div>
             </div>
         </div>

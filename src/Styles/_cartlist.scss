@@ -1,0 +1,105 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.cf:before,.cf:after {content: " ";display: table;}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
+
+//CartWidget
+.carticon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .1rem;
+}
+
+.badge {
+  text-align: center;
+  color: $background-icons;
+  background-color: $dark-primary-color;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+} 
+
+.none {
+  display: none;
+}
+
+
+// CART HEADER
+.heading {
+  padding: 1em 0;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  h1 {
+   /* font-family: $fontSerif; */
+   font-size: 2em;
+   float: left;
+  }
+
+  .removebtn {
+    display: flex;
+    gap: .8rem;
+  }
+  
+}
+
+// CART Items
+.cart {
+    padding: 1em 0;
+
+    &-items {
+        display: block;
+        width: 100%;
+        padding: 1.5em;
+        border-bottom: 1px solid #D0D0D0;
+    }
+
+    &-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cartprice {
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+
+.itemImg {
+    width: 10em;
+}
+
+.total {
+  @include flexible(flex, row, wrap, space-between, center);
+}
+@media only screen and (max-width: 768px){
+    .cart-info {
+        flex-direction: column;
+    }
+
+    .cartprice {
+        justify-content: flex-end;
+        padding-top: 1rem;
+    }
+
+}
+
+/* SIN PRODUCTOS */
+
+.cartvacio {
+  @include flexible(flex, column, wrap, center, center);
+  gap: 1rem;
+}

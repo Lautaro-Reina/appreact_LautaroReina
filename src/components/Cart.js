@@ -2,62 +2,43 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { contextCart } from './CartContext';
-import { db } from './Firebase';
-import { collection, serverTimestamp, addDoc } from 'firebase/firestore';
+import {CartList} from './CartList';
 
 const Cart = () => {
 
-    const {carrito, priceTotal, removeItem, clear} = useContext(contextCart); 
+    const {carrito, clear, priceTotal} = useContext(contextCart); 
 
-    const crearOrden = () => {
-
-        const ordenesCollection = collection(db, "ordenes")
-    
-        const orden = {
-            buyer: {
-                nombre: "Lautaro",
-                email: "lautaro@gmail.com",
-                telefono: "1234567890"
-            },
-            items: carrito,
-            date: serverTimestamp(),
-            total: priceTotal()
-          }
-
-            const pedido = addDoc(ordenesCollection, orden)
-
-        pedido
-            .then((resultado) => {
-                return console.log(resultado)
-            })
-            .catch(() => {
-                return console.log('error')
-            })
-    }
 
     return carrito.length ? (
-        <div>
-            <h2>Carrito</h2>
-            {carrito.map(producto => (
-                <>
-                <div key={producto.id}>
-                    <p>{producto.title}</p>
-                    <p>Cantidad: {producto.quantity}</p>
-                    <button onClick={() => removeItem(producto.id)}>X</button>
+        <section className='container p5 cf min-vh'>
+            <div class="heading">
+                <h1>Mi carrito</h1>
+                <div className='removebtn'>
+                    <button className='button-outline' onClick={() => clear()}><i class='bx bx-trash bx-xs'></i></button>
+                    <button className='button'>Seguir comprando</button>
                 </div>
-                <button onClick={clear}>Limpiar</button>
-                <p>Total: AR$ {priceTotal()}</p>
-                </>
-            ))}
-            <button onClick={crearOrden}>Terminar compra</button>
+            </div>
+            <div className='cart'>
+                <ul className='cartWrap'>
+                    {carrito.map(producto => <CartList key={producto.id} producto={producto}/>)}
+                </ul>
+            </div>
+
+            <div className='total'>
+                <Link to='/checkout'><button className='button-finish'>Terminar compra</button></Link>
+                <p><b>Total:</b> AR$ {priceTotal()}</p>
+            </div>
             
-        </div>
+        </section>
     ) : (
        
-        <div>
-            <h2>Carrito</h2>
-            <p>Carrito vacio!</p>
-            <Link to="/"><button>Ver productos</button></Link>
+        <div className='container cartvacio p5 min-vh'>
+            <i class='bx bx-cart bx-lg' ></i>
+            <h1>¡No tienes productos por comprar!</h1>
+            <small>Una vez que agregues productos, los veras reflejados aqui.</small>
+            <div>
+                <Link to="/"><button className='button'>Ver productos</button></Link>
+            </div>
         </div>
     )
 }

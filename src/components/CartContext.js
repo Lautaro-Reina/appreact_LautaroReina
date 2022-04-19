@@ -2,7 +2,6 @@ import { createContext, useState, useEffect } from "react";
 
 export const contextCart = createContext()
 const { Provider } = contextCart
-/* export const useCartContext = () => useContext(CartContext); */
 
 const CartContext = ({ children }) => {
 
@@ -36,11 +35,13 @@ const CartContext = ({ children }) => {
     }
 
     const isInCart = (id) => {
-        carrito.some(e => e.id === id)
+        return carrito.some(e => e.id === id)
     }
 
     const priceTotal = () => {
-        return carrito.reduce((accum, element) => accum = accum + (element.price * element.quantity), 0)
+        let total = carrito.reduce((accum, element) => accum = accum + (element.price * element.quantity), 0);
+        
+        return total.toFixed(2);
     }
 
     const removeItem = (id) => {

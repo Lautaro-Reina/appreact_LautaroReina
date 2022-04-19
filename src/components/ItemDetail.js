@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 import {contextCart} from './CartContext';
 
-const ItemDetail = (props) => {
+const ItemDetail = ({item}) => {
 
     const {addItem} = useContext(contextCart)
 
@@ -14,18 +14,40 @@ const ItemDetail = (props) => {
     const onAdd = (quantityToAdd) => {
         setQuantity(quantityToAdd)
 
-        addItem(props.item, quantityToAdd)
+        addItem(item, quantityToAdd )
     }
 
     return (
-        <article className="itemDetail">
-            <img src={props.item.image} alt="" />
-            <div className="titulos">
-                <h3>{props.item.title}</h3>
-                <p>AR$ {props.item.price}</p>
+        <article className="detail container min-vh p5">
+            <div className='gs-grid'>
+                <div className='prueba col-12 md-col-6'>
+                    <div className='detail-img'>
+                        <img src={item.image} alt="" />
+                    </div>
+                </div>
+                <div className='col-12 md-col-6'>
+                    <div className="producto-detail">
+                        <h3>{item.title}</h3>
+                        <p className="descripcion">{item.description}</p>
+                        <p><b>Disponible: </b>{item.stock}</p>
+                        <p><b>Precio: </b>AR$ {item.price}</p>
+                        {quantity === 0 
+                        ? 
+                        (<ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>) 
+                        :
+                        (
+                        <div className="productpost-links">
+                            <Link to="/cart">
+                                <button className="button-outline">Terminar mi compra</button>
+                            </Link>
+                            <Link to="/">
+                                <button className="button">Seguir comprando </button>
+                            </Link>
+                        </div>
+                        )}
+                    </div>
+                </div>
             </div>
-            <p className="descripcion">{props.item.description}</p>
-            {quantity === 0 ? (<ItemCount stock={5} initial={1} onAdd={onAdd}/>) : (<Link to="/Cart">Terminar mi compra</Link>)}
         </article>
     )
 }

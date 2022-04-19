@@ -7,11 +7,20 @@ const CartWidget = () => {
 
     const {cantidad} = useContext(contextCart)
 
+    let classBadge = 'badge';
+        if (cantidad < 1) {
+            classBadge += 'none';
+        }
+
     return (
-        <div className='cart'>
-            <Link to="/cart"><i class="fi fi-rs-shopping-cart cart__icon"></i></Link>
-            {cantidad > 0 ? cantidad : ''}
+        <Link to="/cart">
+        <div className='carticon'>
+                <i className='bx bx-cart bx-sm cart__icon'></i>
+            <div className= {classBadge}>
+                {cantidad > 0 ? cantidad : ''}
+            </div>
         </div>
+        </Link>
 
     )
 }
