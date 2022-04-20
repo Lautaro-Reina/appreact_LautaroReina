@@ -9,15 +9,18 @@
   <a href="https://github.com/Lautaro-Reina/appreact_LautaroReina/commits">
     <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/Lautaro-Reina/appreact_LautaroReina">
   </a>
-  <a href="https://github.com/enzom-uy/coderhouseECommerce-munioz/commits">
+  <a href="https://github.com/Lautaro-Reina/appreact_LautaroReina/commits">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Lautaro-Reina/appreact_LautaroReina" /> 
   </a>
+  </a>
+  <a href="https://app-vapeshop.netlify.app/">
+    <img src="https://api.netlify.com/api/v1/badges/b00b85d3-436e-47bc-86f7-5ec0e5cf4880/deploy-status" alt="netlify deploy status success" />
   </a>
   
   
 </p>
 <h4>
-    <a href="">Ver Demo</a>
+    <a href="https://app-vapeshop.netlify.app/">Ver Demo</a>
   </h4>
 </div>
 
@@ -31,9 +34,6 @@
   - [:star2: Acerca del proyecto](#star2-acerca-del-proyecto)
     - [:camera: Screenshots](#camera-screenshots)
   - [:space_invader: Tecnologías usadas](#space_invader-tecnologías-usadas)
-  - [Comenzando con el proyecto.](#comenzando-con-el-proyecto)
-    - [Prerequisitos](#prerequisitos)
-    - [:running: Correr el proyecto localmente](#running-correr-el-proyecto-localmente)
 <!-- About the Project -->
 
 ## :star2: Acerca del proyecto
@@ -56,52 +56,13 @@
   * React por sí mismo no tiene un sistema de navegación por defecto, por lo que elegí React Router Dom. El hecho de ser la librería más usada para navegación, me da la ventaja de poder contar con una gran documentación para facilitar el desarrollo.
 * [Create React App](https://create-react-app.dev/)
   * Este proyecto se construyó usando Create React App.
+* [React Toastify](https://www.npmjs.com/package/react-toastify)
+  * Libreria que permite incorporar notificaciones a la aplicacion.
+* [Sass](https://sass-lang.com/)
+  * Preprocesador de CSS.
 * [Firebase](https://firebase.google.com/)
   * Firebase es una herramienta de hosting de datos que me permitió crear una base de datos lo suficientemente completa como para que sirva en este proyecto.
 * [Netlify](https://www.netlify.com/)
   * Netlify es una herramienta de hosting que me permitió hacer un deploy de mi proyecto de forma gratuita.
 * [Prettier](https://prettier.io/)
   * Prettier es una librería que me permitió hacer un formato de código más legible, eliminando cualquier inconsistencia que pudiera generar sin darme cuenta.
-
-
-<!-- Getting Started -->
-
-## Comenzando con el proyecto.
-
-<!-- Prerequisites -->
-
-### Prerequisitos
-
-Este proyecto usa yarn para la instalación de dependencias, por lo que si no tienes instalado el paquete yarn, debes instalarlo antes de continuar.
-
-```bash
- npm i -g yarn
-```
-
-<!-- Run Locally -->
-
-### :running: Correr el proyecto localmente
-
-Clonar el proyecto:
-
-```bash
-  git clone https://github.com/Lautaro-Reina/appreact_LautaroReina.git
-```
-
-Ir al directorio del proyuecto:
-
-```bash
-  cd appreact_LautaroReina
-```
-
-Instalar las dependencias:
-
-```bash
-  yarn install
-```
-
-Correr el servidor:
-
-```bash
-  yarn start
-```
