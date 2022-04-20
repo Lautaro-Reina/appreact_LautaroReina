@@ -43,7 +43,7 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="./src/assets/demo.gif" alt="Demo gif" />
+  <img src="./src/assets/vape.gif" alt="Demo gif" />
 </div>
 
 <!-- TechStack -->
